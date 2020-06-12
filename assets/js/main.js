@@ -17,13 +17,6 @@ $(document).ready(function(){
   var last_numbersText = $("input[name*='last_numbersText']").val();
   var last_numbersFloat = parseFloat(last_numbersText);
 
-  var inText = $("input[name*='inText']").val();
-  var inFloat = parseFloat(inText);
-
-  var first_numbersText = $("input[name*='first_numbersText']").val();
-  var first_numbers_Float = parseFloat(first_numbersText)
-
-
   var rateText = $("input[name*='rateText']").val();
   var rateFloat = parseFloat(rateText);
 
