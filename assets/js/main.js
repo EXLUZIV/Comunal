@@ -30,10 +30,10 @@ $(document).ready(function(){
 
   if(last_numbers_Float>first_numbersFloat){
     last_numbersFloat = (last_numbersFloat - first_numbersFloat)* rateFloat;
-      $('#out').append(last_numbersFloat);
+      $('#out').append(last_numbersFloat);}
        else{
     $('#out').append("Введите правильные числа");
   }
 }
 }
-}
+
