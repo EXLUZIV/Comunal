@@ -8,11 +8,10 @@ $(document).ready(function(){
   document.getElementById('out').value = "";
 
 
-  var nameText = ("input[name*='nameText]").val();
-  var nameFloat = parseFloat(nameText);
+  var nameText = $("input[name*='nameText']").val();
 
   var first_numbersText = $("input[name*='first_numbersText']").val();
-  var first_numbersText = parseFloat(first_numbersText);
+  var first_numbersFloat = parseFloat(first_numbersText);
 
   var last_numbersText = $("input[name*='last_numbersText']").val();
   var last_numbersFloat = parseFloat(last_numbersText);
@@ -21,7 +20,7 @@ $(document).ready(function(){
   var rateFloat = parseFloat(rateText);
 
 
-  if(last_numbers_Float>first_numbersFloat){
+  if(last_numbersFloat>first_numbersFloat){
     last_numbersFloat = (last_numbersFloat - first_numbersFloat)* rateFloat;
       $('#out').append(last_numbersFloat);
     }
