@@ -5,9 +5,6 @@ $(document).ready(function(mystring){
 
 
 
-
-
-
   var nameText = $("input[name*='nameText']").val();
 
   var first_numbersText = $("input[name*='first_numbersText']").val();
@@ -20,25 +17,32 @@ $(document).ready(function(mystring){
   var rateFloat = parseFloat(rateText);
 
 
-  $("#out").onclick(function (e){
-    document.getElementById("out").value = "";
-  })
+  last_numbersFloat= out.replace(/,/g, '');
+  console.log('#out');
 
 
-  if(first_numbersText > 0 && last_numbersText > 0 && rateText > 0 ){
+  if(first_numbersFloat > 0 && last_numbersFloat > 0 && rateFloat > 0 ) {
 
-    if(last_numbersFloat>first_numbersFloat){
-      last_numbersFloat = (last_numbersFloat - first_numbersFloat)* rateFloat;
-      $('#out').append(last_numbersFloat);
-    }
-    else{
-      $('#out').append("Введите правильные числа");
-    }
 
+      if (last_numbersFloat > first_numbersFloat) {
+
+      }
+      else {
+          $('#out').append("Отрицатильные числа,исправьте");
+      }
   }
-  else{
-    $('#out').append("Отрицатильные числа,исправьте")
-  }
+
+
+    if (last_numbersFloat > first_numbersFloat) {
+
+
+        last_numbersFloat = (last_numbersFloat - first_numbersFloat) * rateFloat;
+        $('#out').append(last_numbersFloat);
+    }
+    else {
+        $('#out').append("Отрицатильные числа,исправьте");
+    }
+
 
 
 
