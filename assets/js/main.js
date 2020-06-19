@@ -1,11 +1,11 @@
-$(document).ready(function(){
+$(document).ready(function(mystring){
 
         
         $("#form_error_message_frontend + div > div:last-child label").addClass("last");
 
 
-        $("#cout").click(function (e){
-  document.getElementById('out').value = "";
+
+
 
 
   var nameText = $("input[name*='nameText']").val();
@@ -20,13 +20,27 @@ $(document).ready(function(){
   var rateFloat = parseFloat(rateText);
 
 
-  if(last_numbersFloat>first_numbersFloat){
-    last_numbersFloat = (last_numbersFloat - first_numbersFloat)* rateFloat;
+  $("#out").onclick(function (e){
+    document.getElementById("out").value = "";
+  })
+
+
+  if(first_numbersText > 0 && last_numbersText > 0 && rateText > 0 ){
+
+    if(last_numbersFloat>first_numbersFloat){
+      last_numbersFloat = (last_numbersFloat - first_numbersFloat)* rateFloat;
       $('#out').append(last_numbersFloat);
     }
-       else{
-    $('#out').append("Введите правильные числа");
+    else{
+      $('#out').append("Введите правильные числа");
+    }
+
   }
-})
+  else{
+    $('#out').append("Отрицатильные числа,исправьте")
+  }
+
+
+
 })
 
