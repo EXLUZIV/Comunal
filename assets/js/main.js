@@ -5,6 +5,11 @@ $(document).ready(function(mystring){
 
 
 
+ $("#cout").click(function (e){ 
+
+ $('#out').text(' ');
+
+
   var nameText = $("input[name*='nameText']").val();
 
   var first_numbersText = $("input[name*='first_numbersText']").val();
@@ -17,12 +22,6 @@ $(document).ready(function(mystring){
   var rateFloat = parseFloat(rateText);
 
 
-  $("#cout").click(function (e){  
-    document.getElementById("out").value = "";
-  })
-
-
- $("#cout").click(function (e){ 
   if(first_numbersFloat > 0 && last_numbersFloat > 0 && rateFloat > 0) {
 
 
