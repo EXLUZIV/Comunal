@@ -17,8 +17,9 @@ $(document).ready(function(mystring){
   var rateFloat = parseFloat(rateText);
 
 
-  last_numbersFloat= out.replace(/,/g, '');
-  console.log('#out');
+  $("#cout").onclick(function (e){
+    document.getElementById("out").value = "";
+  })
 
 
   if(first_numbersFloat > 0 && last_numbersFloat > 0 && rateFloat > 0 ) {
