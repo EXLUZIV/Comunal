@@ -39,6 +39,7 @@ $(document).ready(function(mystring){
         last_numbersFloat = (last_numbersFloat - first_numbersFloat) * rateFloat;
         $('#out').append(last_numbersFloat);
     }
+    
     else {
         $('#out').append("Отрицатильные числа,исправьте");
     }
