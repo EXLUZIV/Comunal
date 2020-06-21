@@ -17,12 +17,13 @@ $(document).ready(function(mystring){
   var rateFloat = parseFloat(rateText);
 
 
-  $("#cout").onclick(function (e){
+  $("#cout").click(function (e){  
     document.getElementById("out").value = "";
   })
 
 
-  if(first_numbersFloat > 0 && last_numbersFloat > 0 && rateFloat > 0 ) {
+ $("#cout").click(function (e){ 
+  if(first_numbersFloat > 0 && last_numbersFloat > 0 && rateFloat > 0) {
 
 
       if (last_numbersFloat > first_numbersFloat) {
@@ -48,5 +49,6 @@ $(document).ready(function(mystring){
 
 
 
+})
 })
 
