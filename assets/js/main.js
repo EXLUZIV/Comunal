@@ -42,24 +42,24 @@ $(document).ready(function(mystring){
                 + last_numbersText +'</td><td>'
                 + rateText +'</td><td>'
                 + result +'</td> </tr>');
+
                 console.log(nameText);
+
 
         }
         else {
             $('#out').append("Первое число больше второго,исправьте");
 
         }
-
-
-     
-
-    });
+            });
      $("#clear").click(function(e){
       $('#employeesTable').empty();
       $('#all_out').empty();
 
     })
 
+    });
 
-})
+
+     
 
