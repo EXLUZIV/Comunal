@@ -21,6 +21,8 @@ $(document).ready(function(mystring){
   var rateText = $("input[name*='rateText']").val();
   var rateFloat = parseFloat(rateText);
 
+  var all_out = 0;
+
 
   if(first_numbersFloat > 0 && last_numbersFloat > 0 && rateFloat > 0) {
 
@@ -31,7 +33,7 @@ $(document).ready(function(mystring){
       else {
           $('#out').append("Отрицатильные числа,исправьте");
       }
-  }
+  }     
 
 
     if (last_numbersFloat > first_numbersFloat) {
@@ -39,15 +41,44 @@ $(document).ready(function(mystring){
 
         last_numbersFloat = (last_numbersFloat - first_numbersFloat) * rateFloat;
         $('#out').append(last_numbersFloat);
+
+        $('#all_out').append("Итоговая сумма оплаты :" && last_numbersFloat)
+
     }
     
     else {
-        $('#out').append("Отрицатильные числа,исправьте");
+        $('#out').append("Первое число больше второго,исправьте");
     }
+
+
+
+    //$('#myTable tr:last').after('<tr> <td></td> <td></td> <td></td> <td></td> <td></td> </tr>');\
+    $('#employeesTable').append('<tr> <td id = "name_table"></td"> <td id = "first_numbers_table></td> <td  id last_numbers_table></td> <td id = "rate_table"></td> <td id = "out_table"></td> </tr>');
+
+
+
+    $('#name_table').append(nameText);
+    $('#first_numbers_table').append(first_numbersText);
+    $('#last_numbers_table').append(last_numbersText);
+    $('#rate_table').append(rateText);
+    $('#out_table').append(out);
 
 
 
 
 })
+
+ $("#clear").click(function(e){
+
+
+    $('#name_table').text('');
+    $('#first_numbers_table').text('');
+    $('#last_numbers_table').text('');
+    $('#rate_table').text('');
+    $('#out_table').text('');
+    $('#all_out').text('');
+
+
+ })
 })
 
