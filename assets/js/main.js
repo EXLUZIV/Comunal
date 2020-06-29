@@ -1,7 +1,7 @@
-$(document).ready(function(mystring){
+$(document).ready(function (mystring) {
     $("#form_error_message_frontend + div > div:last-child label").addClass("last");
 
-    $("#cout").click(function (e){
+    $("#cout").click(function (e) {
 
         $('#out').text(' ');
 
@@ -16,17 +16,20 @@ $(document).ready(function(mystring){
         var rateText = $("input[name*='rateText']").val();
         var rateFloat = parseFloat(rateText);
 
+        //console.log(rateFloat);
+
         var allOutText = $('#all_out').text();
         var allOutFloat = 0;
+
+
         if (allOutText.length > 0) {
             allOutFloat = parseFloat(allOutText);
         }
 
-        if(first_numbersFloat > 0 && last_numbersFloat > 0 && rateFloat > 0) {
+        if (first_numbersFloat > 0 && last_numbersFloat > 0 && rateFloat > 0) {
             if (last_numbersFloat > first_numbersFloat) {
 
-            }
-            else {
+            } else {
                 $('#out').append("Отрицатильные числа,исправьте");
             }
         }
@@ -35,30 +38,39 @@ $(document).ready(function(mystring){
             var result = (last_numbersFloat - first_numbersFloat) * rateFloat;
             $('#all_out').text(' ');
             var allOutResult = allOutFloat + result;
+            //console.log(allOutResult);
+            var allOutResult = allOutResult.toFixed(1);
+            //console.log(allOutResult);
             $('#all_out').append(allOutResult);
+            $("tr").each(function (index) {
+                console.log(index);
 
-            $('#employeesTable').append('<tr><td>'+ nameText +'</td><td>'
-                + first_numbersText +'</td><td>'
-                + last_numbersText +'</td><td>'
-                + rateText +'</td><td>'
-                + result +'</td> </tr>');
+            });
 
-                console.log(nameText);
+            $('#employeesTable').append('<tr><td>' + nameText + '</td><td>'
+                + first_numbersText + '</td><td>'
+                + last_numbersText + '</td><td>'
+                + rateText + '</td><td>'
+                + result + '</td> + <td> <button id = "clear_this"> Удалить </button> </td> </tr>');
+            $('#clear_this').click(function (e) {
+                $('#employeesTable').find('tr').eq(index).remove();
+                console.log(index);
+            })
 
 
-        }
-        else {
+        } else {
             $('#out').append("Первое число больше второго,исправьте");
 
         }
-            });
-     $("#clear").click(function(e){
-      $('#employeesTable').empty();
-      $('#all_out').empty();
+    });
+    $("#clear").click(function (e) {
+        $('#employeesTable').empty();
+        $('#all_out').empty();
 
     })
 
-    });
+
+});
 
 
      
