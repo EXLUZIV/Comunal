@@ -13,6 +13,7 @@ $(document).ready(function (mystring) {
         var last_numbersText = $("input[name*='last_numbersText']").val();
         var last_numbersFloat = parseFloat(last_numbersText);
 
+
         var rateText = $("input[name*='rateText']").val();
         var rateFloat = parseFloat(rateText);
 
@@ -44,6 +45,8 @@ $(document).ready(function (mystring) {
             $('#all_out').append(allOutResult);
             $("tr").each(function (index) {
                 console.log(index);
+                $('#employeesTable').find('tr').eq(index).remove();
+                console.log(index);
 
             });
 
@@ -52,10 +55,6 @@ $(document).ready(function (mystring) {
                 + last_numbersText + '</td><td>'
                 + rateText + '</td><td>'
                 + result + '</td> + <td> <button id = "clear_this"> Удалить </button> </td> </tr>');
-            $('#clear_this').click(function (e) {
-                $('#employeesTable').find('tr').eq(index).remove();
-                console.log(index);
-            })
 
 
         } else {
@@ -71,7 +70,3 @@ $(document).ready(function (mystring) {
 
 
 });
-
-
-     
-
