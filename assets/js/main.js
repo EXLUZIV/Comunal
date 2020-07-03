@@ -43,19 +43,15 @@ $(document).ready(function (mystring) {
             var allOutResult = allOutResult.toFixed(1);
             //console.log(allOutResult);
             $('#all_out').append(allOutResult);
-            $("tr").each(function (index) {
-                console.log(index);
-                $('#employeesTable').find('tr').eq(index).remove();
-                console.log(index);
-
-            });
-
             $('#employeesTable').append('<tr><td>' + nameText + '</td><td>'
                 + first_numbersText + '</td><td>'
                 + last_numbersText + '</td><td>'
                 + rateText + '</td><td>'
-                + result + '</td> + <td> <button id = "clear_this"> Удалить </button> </td> </tr>');
+                + result + '</td> + <td> <button class = "clear_this"> Удалить </button> </td> </tr>');
 
+            $(".clear_this").click(function () {
+                $(this).parent().parent().remove();
+            });
 
         } else {
             $('#out').append("Первое число больше второго,исправьте");
