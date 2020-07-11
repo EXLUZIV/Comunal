@@ -39,9 +39,8 @@ $(document).ready(function (mystring) {
             var result = (last_numbersFloat - first_numbersFloat) * rateFloat;
             $('#all_out').text(' ');
             var allOutResult = allOutFloat + result;
-            //console.log(allOutResult);
             var allOutResult = allOutResult.toFixed(1);
-            //console.log(allOutResult);
+
             $('#all_out').append(allOutResult);
             $('#employeesTable').append('<tr><td>' + nameText + '</td><td>'
                 + first_numbersText + '</td><td>'
@@ -51,7 +50,16 @@ $(document).ready(function (mystring) {
 
             $(".clear_this").click(function () {
                 $(this).parent().parent().remove();
+                $(this).parent().parent().find(result);
+                console.log(result);
+                $('#all_out').find(allOutResult);
+                console.log(allOutResult);
+                var allOutResult = allOutResult - result;
+                var allOutResult = allOutResult.toFixed(1);
+                console.log(allOutResult);
+                $('#all_out').append(allOutResult);
             });
+
 
         } else {
             $('#out').append("Первое число больше второго,исправьте");
