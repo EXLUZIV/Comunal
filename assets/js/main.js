@@ -48,17 +48,7 @@ $(document).ready(function (mystring) {
                 + rateText + '</td><td>'
                 + result + '</td> + <td> <button class = "clear_this"> Удалить </button> </td> </tr>');
 
-            $(".clear_this").click(function () {
-                $(this).parent().parent().remove();
-                $(this).parent().parent().find(result);
-                console.log(result);
-                $('#all_out').find(allOutResult);
-                console.log(allOutResult);
-                var allOutResult = allOutResult - result;
-                var allOutResult = allOutResult.toFixed(1);
-                console.log(allOutResult);
-                $('#all_out').append(allOutResult);
-            });
+            
 
 
         } else {
@@ -72,5 +62,16 @@ $(document).ready(function (mystring) {
 
     })
 
-
+            $(".clear_this").each(function () {
+                $(this).click(function(){
+                $(this).parent().parent().remove();
+                $(this).parent().parent().find(result);
+                var this_out = parseFloat($('#all_out').text());
+                console.log(this_out);
+                var allOutResult = this_out - result;
+                var allOutResult = allOutResult.toFixed(1);
+                $('#all_out').append(allOutResult);
+                })
+                
+            });
 });
