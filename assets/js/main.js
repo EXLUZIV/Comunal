@@ -39,7 +39,7 @@ $(document).ready(function (mystring) {
             var result = (last_numbersFloat - first_numbersFloat) * rateFloat;
             $('#all_out').text(' ');
             var allOutResult = allOutFloat + result;
-            var allOutResult = allOutResult.toFixed(1);
+            allOutResult = allOutResult.toFixed(1);
 
             $('#all_out').append(allOutResult);
             $('#employeesTable').append('<tr><td>' + nameText + '</td><td>'
@@ -48,7 +48,7 @@ $(document).ready(function (mystring) {
                 + rateText + '</td><td>'
                 + result + '</td> + <td> <button class = "clear_this"> Удалить </button> </td> </tr>');
 
-            
+
 
 
         } else {
@@ -62,16 +62,27 @@ $(document).ready(function (mystring) {
 
     })
 
-            $(".clear_this").each(function () {
-                $(this).click(function(){
-                $(this).parent().parent().remove();
-                $(this).parent().parent().find(result);
-                var this_out = parseFloat($('#all_out').text());
-                console.log(this_out);
-                var allOutResult = this_out - result;
-                var allOutResult = allOutResult.toFixed(1);
-                $('#all_out').append(allOutResult);
-                })
-                
-            });
+    // $(".clear_this").each(function () {
+    //     $(this).on('click', function(){
+    //         $(this).parent().parent().remove();
+    //         $(this).parent().parent().find(result);
+    //         var this_out = parseFloat($('#all_out').text());
+    //         console.log(this_out);
+    //         var allOutResult = this_out - result;
+    //         var allOutResult = allOutResult.toFixed(1);
+    //         $('#all_out').append(allOutResult);
+    //     })
+    //
+    // });
+
+    $(document ).on( 'click', '.clear_this', function() {
+        var td = $(this).parent().parent();
+        var thisOut = parseFloat($('#all_out').text());
+        td = parseFloat(td[0].childNodes[4].firstChild.data);
+        var allOutResult = thisOut - td;
+        allOutResult = allOutResult.toFixed(1);
+        $('#all_out').text('');
+        $('#all_out').append(allOutResult);
+        $(this).parent().parent().remove();
+    });
 });
