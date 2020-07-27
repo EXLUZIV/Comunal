@@ -31,7 +31,7 @@ $(document).ready(function (mystring) {
             allOutResult = allOutResult.toFixed(1);
 
             $('#all_out').append(allOutResult);
-            $('#employeesTable').append('<tr class = ".dname"><td>' + nameText + '</td><td>'
+            $('#employeesTable > tbody').append('<tr class = ".dname"><td>' + nameText + '</td><td>'
                 + first_numbersFloat + '</td><td>'
                 + last_numbersFloat + '</td><td>'
                 + rateFloat + '</td><td>'
@@ -47,9 +47,10 @@ $(document).ready(function (mystring) {
 
 
     $("#clear").click(function (e) {
-        var tr = $(".dname").find("td");
-        console.log(td);
-        $(tr).remove();
+        $("#employeesTable > tbody tr").remove();
+        // var tr = $(".dname").find("td");
+        // console.log(td);
+        // $(tr).remove();
         //$("tr").removeClass(#.dname);
         //console.log(#.dname);
     })
